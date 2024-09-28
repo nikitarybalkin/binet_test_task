@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -49,6 +50,15 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.searchIsGood.collect {
+                it?.let {
+                    if (it.listDrugs.isNotEmpty()) {
+                        listRouter.goToOneItemFromSearchFragment(fragment, DrugConverter().fromListDrugs(it))
+                    }
+                }
+            }
+        }
         binding.etSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
@@ -62,22 +72,9 @@ class SearchFragment : Fragment() {
         binding.ivSearch.setOnClickListener {
             if (viewModel.name != "") {
                 viewModel.getDrugBySearch()
-                goToDrug()
             } else Toast.makeText(requireActivity().applicationContext, resources.getString(com.example.core.R.string.field_must_not), Toast.LENGTH_SHORT).show()
         }
 
 
-    }
-    fun goToDrug() {
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.searchIsGood.collect {
-                it?.let {
-                    if (it.listDrugs.isNotEmpty()) {
-                        listRouter.goToOneItemFromSearchFragment(fragment, DrugConverter().fromListDrugs(it))
-                    }
-                }
-                this.cancel()
-            }
-        }
     }
 }
