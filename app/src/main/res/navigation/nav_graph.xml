@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="features.list.presentation.ListFragment"
+        android:label="ListFragment" >
+        <action
+            android:id="@+id/action_listFragment_to_oneItemFragment"
+            app:destination="@id/oneItemFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oneItemFragment"
+        android:name="features.list.presentation.OneItemFragment"
+        android:label="OneItemFragment" >
+        <argument
+            android:name="ListDrugsItem"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_oneItemFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="features.list.presentation.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_oneItemFragment"
+            app:destination="@id/oneItemFragment" />
+    </fragment>
+</navigation>

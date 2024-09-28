@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">binet_test_task</string>
+    <string name="list">Список</string>
+    <string name="where_buy">ГДЕ КУПИТЬ?</string>
+    <string name="enter_name">Введите название товара</string>
+    <string name="field_must_not">Поле ввода не должно быть пустым</string>
+    <string name="nothing_found_for">По вашему запросу ничего не найдено</string>
+</resources>

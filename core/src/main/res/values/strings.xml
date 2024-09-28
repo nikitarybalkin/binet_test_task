@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">binet_test_task</string>
+    <string name="list">List</string>
+    <string name="where_buy">WHERE BUY?</string>
+    <string name="enter_name">Enter name of product</string>
+    <string name="field_must_not">Search field must not be empty</string>
+    <string name="nothing_found_for">Nothing found for your request</string>
+</resources>
