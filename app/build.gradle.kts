@@ -45,6 +45,7 @@ dependencies {
     implementation(project(":network"))
     implementation(project(":core"))
     implementation(project(":features:list"))
+    implementation(project(":features:search"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

@@ -6,7 +6,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import dagger.multibindings.StringKey
 import features.list.presentation.ListViewModel
-import features.list.presentation.SearchViewModel
+import com.example.search.presentation.SearchViewModel
 
 @Module
 interface ViewModelModule {

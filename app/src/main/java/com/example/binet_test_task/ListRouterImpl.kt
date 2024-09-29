@@ -14,12 +14,6 @@ class ListRouterImpl @Inject constructor(): ListRouter {
         findNavController(fragment).navigate(R.id.action_listFragment_to_oneItemFragment, bundle)
     }
 
-    override fun goToOneItemFromSearchFragment(fragment: Fragment, oneDrug: String) {
-        val bundle = Bundle()
-        bundle.putString("listDrugs", oneDrug)
-        findNavController(fragment).navigate(R.id.action_searchFragment_to_oneItemFragment, bundle)
-    }
-
     override fun goToListFragment(fragment: Fragment) {
         findNavController(fragment).navigate(R.id.action_oneItemFragment_to_listFragment)
     }
@@ -27,4 +21,5 @@ class ListRouterImpl @Inject constructor(): ListRouter {
     override fun goToSearchFragment(fragment: Fragment) {
         findNavController(fragment).navigate(R.id.action_listFragment_to_searchFragment)
     }
+
 }

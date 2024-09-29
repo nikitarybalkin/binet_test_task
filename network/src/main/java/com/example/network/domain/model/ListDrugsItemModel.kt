@@ -8,7 +8,7 @@ import com.example.network.data.Response.ListDrugsItem
 data class ListDrugsItemModel (
     val categories: Categories,
     val description: String,
-    val documentation: String,
+    val documentation: String?,
     val fields: List<Field>,
     val gtin: String,
     val id: Int,

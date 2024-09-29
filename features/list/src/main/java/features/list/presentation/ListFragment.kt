@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.example.core.di.ViewModelFactory
+import com.example.core.ViewModelFactory
 import com.example.network.utils.DrugConverter
 import com.example.network.domain.model.ListDrugsItemModel
 import features.list.databinding.FragmentListBinding

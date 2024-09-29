@@ -6,6 +6,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.core.Constants
 import com.example.network.domain.model.ListDrugsItemModel
 import features.list.databinding.ListDrugsItemBinding
 
@@ -34,10 +35,10 @@ class ListOfDrugsPagingAdapter(
             if (item != null) {
                 Glide
                     .with(binding.iv.context)
-                    .load("http://shans.d2.i-partner.ru/${item.image}")
+                    .load("${Constants().linkToServer}/${item.image}")
                     .into(binding.iv)
                 binding.tvNameDrug.text = item.name
-                binding.tvDecription.text = item.description
+                binding.tvDescription.text = item.description
                 binding.cvDrug.setOnClickListener {
                     goToOneItemFragment(item)
                 }

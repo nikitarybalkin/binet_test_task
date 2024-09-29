@@ -1,5 +1,6 @@
 package com.example.network.di
 
+import com.example.core.Constants
 import com.example.network.data.DrugsAPI
 import com.example.network.data.DrugsRemoteDataSource
 import com.example.network.data.DrugsRemoteDataSourceImpl
@@ -15,7 +16,7 @@ class NetworkModule {
     @Provides
     fun providesRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://shans.d2.i-partner.ru")
+            .baseUrl(Constants().linkToServer)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

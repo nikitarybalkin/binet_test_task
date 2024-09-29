@@ -28,10 +28,13 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="features.list.presentation.SearchFragment"
+        android:name="com.example.search.presentation.SearchFragment"
         android:label="SearchFragment" >
         <action
             android:id="@+id/action_searchFragment_to_oneItemFragment"
             app:destination="@id/oneItemFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_listFragment"
+            app:destination="@id/listFragment" />
     </fragment>
 </navigation>
